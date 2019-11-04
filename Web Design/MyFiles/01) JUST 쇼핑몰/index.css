@@ -33,7 +33,13 @@ ul[data-main-menu] > li {position:relative; display:flex; flex:1 1 auto;  justif
 ul[data-sub-menu] {display:none; width:100%; position:absolute; top:4.2rem; text-align:center; }
 ul[data-main-menu]:hover > li > ul[data-sub-menu] {display:block;} , ul[data-main-menu] > li:hover > ul[data-sub-menu] {display:block; z-index:10;}
 /*main , sub 는 rem 간격은 rem으로 통일되어 있다.*/
-ul[data-main-menu] {background-color:black; opacity:0.9; color:white;}
+
+/*ul[data-main-menu] {background-color:black; opacity:0.9; color:white;}*/
+ul[data-main-menu] {color:white;}
+ul[data-main-menu]:nth-child(1) {background-color:#FF00DE;}
+ul[data-main-menu]:nth-child(2) {background-color:#AE00FF;}
+ul[data-main-menu]:nth-child(3) {background-color:#6600FF;}
+ul[data-main-menu]:nth-child(4) {background-color:#3600FF;}
 ul[data-sub-menu] {color:black; font-size:1.2rem; border-style:solid; border-width: 0 1px;}
 ul[data-sub-menu] > li:nth-child(even) {background-color:black; color:white;}
 
