@@ -1,7 +1,10 @@
 @charset "utf-8"
+/*리셋*/
 body,html {margin:0px; padding:0px;}
 figure {margin:0;}
 ul,li {list-style:none; margin:0; padding:0;}
+a {text-decoration:none;}
+a:visited {color:inherit;}
 
 body {color:#222328;}
 
@@ -10,7 +13,7 @@ body {color:#222328;}
 /*바로가기 태그*/
 div[data-skip] {position:relative;}
 div[data-skip] > a {position:absolute; display:inline-block; background:black; top:-100px; right:0; outline:1px solid red; font-size:2rem;}
-div[data-skip] > a:focus {top:0;}
+div[data-skip] > a:focus {top:0; color:white;}
 
 
 /*헤더 태그*/
@@ -24,13 +27,18 @@ img[data-header-logo-image] {position:absolute;}
 figcaption[data-header-logo-link] {position:absolute;}
 .logo_size {width:200px; height:40px;}
 a[data-header-logo-link] {display:inline-block; color:transparent;}
-nav[data-header-navigation] {grid-column:span 8; }
-ul[data-main-menu] {display:flex; height:100%; justify-content:space-around; align-items:center;}
-ul[data-main-menu] > li {position:relative; display:flex; flex:1 1 auto; justify-content: center; font-size:1rem; cursor:pointer;}
-ul[data-main-menu] > li:hover > ul[data-sub-menu] {display:block; z-index:1;}
-ul[data-sub-menu] {display:none; position:absolute; top:1rem; text-align:center; margin-top:1rem;}
-ul[data-sub-menu] > li {margin:1rem 0;}
+nav[data-header-navigation] {grid-column:span 8; display:flex; justify-content:space-around; align-items:stretch; }
+ul[data-main-menu] {display:flex; flex:1 1 auto; align-items:center; cursor:pointer; }
+ul[data-main-menu] > li {position:relative; display:flex; flex:1 1 auto;  justify-content: center; font-size:1.5rem;}
+ul[data-sub-menu] {display:none; width:100%; position:absolute; top:4.2rem; text-align:center; }
+ul[data-main-menu]:hover > li > ul[data-sub-menu] {display:block;} , ul[data-main-menu] > li:hover > ul[data-sub-menu] {display:block; z-index:10;}
 /*main , sub 는 rem 간격은 rem으로 통일되어 있다.*/
+ul[data-main-menu] {background-color:black; opacity:0.9; color:white;}
+ul[data-sub-menu] {color:black; font-size:1.2rem; border-style:solid; border-width: 0 1px;}
+ul[data-sub-menu] > li:nth-child(even) {background-color:black; color:white;}
+
+
+
 
 /*이미지 슬라이더*/
 figure[data-image-slider] {grid-column:span 12;  border:1px solid black;}
