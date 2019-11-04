@@ -30,10 +30,10 @@ a[data-header-logo-link] {display:inline-block; color:transparent;}
 nav[data-header-navigation] {grid-column:span 8; display:flex; justify-content:space-around; align-items:stretch; }
 ul[data-main-menu] {display:flex; flex:1 1 auto; align-items:center; cursor:pointer; }
 ul[data-main-menu] > li {position:relative; display:flex; flex:1 1 auto;  justify-content: center; font-size:1.5rem;}
-ul[data-sub-menu] {display:none; width:100%; position:absolute; top:2.7em; text-align:center;}
-ul[data-sub-menu] > li {font-size:1.2rem; padding:0.45rem 0 0.45rem 0;}
+ul[data-sub-menu] {width:100%; position:absolute; top:2.7em; text-align:center; }
+ul[data-sub-menu] > li {font-size:1.2rem; padding:0;  max-height:0; transition-property: max-height, padding,color; transition-duration: 0.5s; transition-timing-function: ease-in-out; color:transparent;}
 ul[data-sub-menu] > li:last-child {margin:0;}
-ul[data-main-menu]:hover > li > ul[data-sub-menu] {display:block;} , ul[data-main-menu] > li:hover > ul[data-sub-menu] {display:block; z-index:10;}
+ul[data-main-menu]:hover > li > ul[data-sub-menu] > li , ul[data-main-menu] > li:hover > ul[data-sub-menu] > li {z-index:10; padding:0.45rem 0 0.45rem 0; max-height:200px; transition-property: max-height,padding,color; transition-duration: 0.5s; transition-timing-function:ease-in-out; color:white;}
 /*main , sub 는 rem 간격은 rem으로 통일되어 있다.*/
 
 /*ul[data-main-menu] {background-color:black; opacity:0.9; color:white;}*/
@@ -64,12 +64,8 @@ ul[data-main-menu]:nth-child(4) > li > ul > li:nth-child(3) {background-color:#A
 ul[data-main-menu]:nth-child(4) > li > ul > li:nth-child(4) {background-color:#6600FF;}
 
 
-
-
-
-
 /*이미지 슬라이더*/
-figure[data-image-slider] {grid-column:span 12;  border:1px solid black;}
+figure[data-image-slider] {grid-column:span 12;}
 
 /*공지사항 , 배너 , 바로가기*/
 section[data-etc-section] {display:contents;}
