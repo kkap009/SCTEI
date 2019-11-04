@@ -28,7 +28,7 @@ figcaption[data-header-logo-link] {position:absolute;}
 .logo_size {width:200px; height:40px;}
 a[data-header-logo-link] {display:inline-block; color:transparent;}
 nav[data-header-navigation] {grid-column:span 8; display:flex; justify-content:space-around; align-items:stretch; }
-ul[data-main-menu] {display:flex; flex:1 1 auto; align-items:center; cursor:pointer; }
+ul[data-main-menu] {display:flex; flex:1 1 auto; align-items:center; cursor:pointer; border:1px solid black;}
 ul[data-main-menu] > li {position:relative; display:flex; flex:1 1 auto;  justify-content: center; font-size:1.5rem;}
 ul[data-sub-menu] {display:none; width:100%; position:absolute; top:4.2rem; text-align:center; }
 ul[data-main-menu]:hover > li > ul[data-sub-menu] {display:block;} , ul[data-main-menu] > li:hover > ul[data-sub-menu] {display:block; z-index:10;}
