@@ -1,9 +1,9 @@
-const mainMenu = document.querySelectorAll("ul[data-main-menu]");
-const body = document.getElementsByTagName("body");
+(function (){
+    const mainMenu = document.querySelectorAll("ul[data-main-menu]");
+const html = document.getElementsByTagName("html");
 let i = null;
-let flag = null;
 
-const ulRest = function(){
+const maxHeightRest = function(){
     const childs = document.querySelectorAll("ul[data-sub-menu] > li");
             
     for(i=0; i<childs.length; ++i){
@@ -19,10 +19,7 @@ for(i=0; i<mainMenu.length; ++i){
         const target = e.target;
         const targetName = e.target.tagName.toLowerCase();
         const targetParentName = target.parentElement.tagName.toLowerCase();
-        let children;
-        let targetChildName;
-        let ulCheck;
-        let liCheck;
+        let children , targetChildName , ulCheck , liCheck;
         
         /*예외 처리*/
         try{
@@ -37,10 +34,10 @@ for(i=0; i<mainMenu.length; ++i){
         
         if(ulCheck){           
             children = target.children[0].children[0].children;    
-            ulRest();
+            maxHeightRest();
         }else if(liCheck){
             children = target.children[0].children;
-            ulRest();
+            maxHeightRest();
         }else {
             return 0;
         }
@@ -52,13 +49,13 @@ for(i=0; i<mainMenu.length; ++i){
     },false);
 }
 
-body[0].addEventListener("mouseover",function(e){
-        
-        const childs = document.querySelectorAll("ul[data-sub-menu] > li");
+html[0].addEventListener("mouseover",function(e){
+        maxHeightRest();
+},false);
+})();
     
-        for(i=0; i<childs.length; ++i){
-            childs[i].style.maxHeight = null;
-        }    
-});
+    
+
+
 
 
