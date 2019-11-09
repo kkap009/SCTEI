@@ -27,6 +27,8 @@ img[data-header-logo-image] {position:absolute;}
 figcaption[data-header-logo-link] {position:absolute;}
 .logo_size {width:200px; height:40px;}
 a[data-header-logo-link] {display:inline-block; color:transparent;}
+
+/*네비게이션 메뉴*/
 nav[data-header-navigation] {grid-column:span 8; display:flex; justify-content:space-around; align-items:stretch; }
 ul[data-main-menu] {display:flex; flex:1 1 auto; align-items:center; cursor:pointer; }
 ul[data-main-menu] > li {position:relative; display:flex; flex:1 1 auto;  justify-content: center; font-size:1.5rem;}
