@@ -1,13 +1,17 @@
 /*<nav>*/
 (function () {
+    const navMenu = "nav[data-header-navigation]";
     const mainMenu = "ul[data-main-menu]";
-    const mainMenuLi = `${mainMenu} > li`;
-    const mainMenuQ = document.querySelectorAll(`${mainMenu}`);
-    const mainMenuA = document.querySelectorAll(`${mainMenuLi} > a`);
     const subMenu = "ul[data-sub-menu]";
+    const mainMenuLi = `${mainMenu} > li`;
     const subMenuLi = `${subMenu} > li`;
-    const subMenuLastA = document.querySelector(` ${mainMenu}:last-child li > ${subMenu} li:last-child > a`);
-    let status = null;
+    const navMenuQ = document.querySelectorAll(`${navMenu}`);
+    const mainMenuQ = document.querySelectorAll(`${mainMenu}`);
+    const mainMenuQ_A = document.querySelectorAll(`${mainMenuLi} > a`);
+    const subMenuLi_A = document.querySelectorAll(`${subMenuLi} > a`);
+    const subMenuLi_LastEl = document.querySelectorAll(`${subMenuLi}:last-child > a`);
+    const className = "sub-Menu-Active";
+    let that = null;
     let i = null;
 
     const maxHeightRest = function () {
@@ -15,6 +19,7 @@
 
         for (i = 0; i < li.length; ++i) {
             li[i].style.maxHeight = null;
+            li[i].classList.remove(`${className}`);
         }
     }
 
@@ -25,16 +30,16 @@
     }
 
     const mainMenuHeight = function (e, type) {
-        e.stopPropagation();
-
+        if (e.target.tagName.toLowerCase().match("nav")) {
+            return 0;
+        }
+        
         switch (type) {
             case "mouseover":
                 const mouseoverMenuLi = e.target.querySelectorAll(`${subMenuLi}`);
                 if (mouseoverMenuLi.length) {
                     maxHeightRest();
                     maxHeightValue(mouseoverMenuLi);
-                } else {
-                    return 0;
                 }
                 break;
             case "focus":
@@ -42,42 +47,51 @@
                 if (focusMenuLi.length) {
                     maxHeightRest();
                     maxHeightValue(focusMenuLi);
-                } else {
-                    return 0;
                 }
                 break;
         }
+
+        return 0;
     }
 
-    for (i = 0; i < mainMenuQ.length; ++i) {
-        mainMenuQ[i].addEventListener("mouseover", function (e) {
-            e.stopPropagation();
-            mainMenuHeight(e, e.type);
-        }, false);
-
-        mainMenuA[i].addEventListener("click", function (e) {
-            e.stopPropagation();
-            e.preventDefault();
-        }, false);
-
-        mainMenuA[i].addEventListener("focus", function (e) {
-            e.stopPropagation();
-            mainMenuHeight(e, e.type);
-        }, false)
-    }
-
-    subMenuLastA.addEventListener("blur", function (e) {
+    navMenuQ[0].addEventListener("mouseover", function (e) {
         e.stopPropagation();
+        mainMenuHeight(e, e.type);
+    }, true);
+
+    navMenuQ[0].addEventListener("click", function (e) {
+        e.stopPropagation();
+        const mainMenuAttr = e.target.parentElement.parentElement.attributes[0].nodeName;
+
+        if (mainMenuAttr.match("data-main-menu")) {
+            e.preventDefault();
+        }
+        return 0;
+    }, false);
+
+    window.addEventListener("mouseover", function (e) {
         maxHeightRest();
     }, false);
 
+    for (i = 0; i < mainMenuQ_A.length; ++i) {
+        mainMenuQ_A[i].addEventListener("focus", function (e) {
+            e.stopPropagation();
 
-    addEventListener("mouseover", function (e) {
-        maxHeightRest();
-    }, false);
-
+            if (e.target.isEqualNode(this)) {
+                mainMenuHeight(e, e.type);
+                
+                const subMenuLi_active = e.target.parentElement.querySelectorAll(`${subMenuLi}`);
+                
+                for(i=0; i<subMenuLi_active.length; ++i){
+                    subMenuLi_active[i].classList.add(`${className}`);
+                }
+            }
+        }, false);
+        
+        subMenuLi_LastEl[i].addEventListener("blur", function (e) {
+            maxHeightRest();
+        });
+    }
 
 })();
-
-
 /* </nav>*/

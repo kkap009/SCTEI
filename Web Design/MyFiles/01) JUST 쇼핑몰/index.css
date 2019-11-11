@@ -35,8 +35,10 @@ ul[data-main-menu] > li {position:relative; display:flex; flex:1 1 auto;  justif
 ul[data-sub-menu] {width:100%; position:absolute; top:2.7em; text-align:center; }
 ul[data-sub-menu]  li {font-size:1.2rem; padding:0;  max-height:0; border:none; transition-property: max-height, padding,border; transition-duration: 0.6s; overflow:hidden;}
 ul[data-sub-menu] > li:last-child {margin:0;}
-ul[data-main-menu]:hover > li > ul[data-sub-menu] > li, 
-ul[data-main-menu] > li:hover > ul[data-sub-menu]  li
+ul[data-main-menu]:hover > li > ul[data-sub-menu] li, 
+ul[data-main-menu] > li:hover > ul[data-sub-menu]  li,
+ul[data-main-menu] > li > a:focus + ul[data-sub-menu] li,
+ul[data-main-menu] > li > a + ul[data-sub-menu] li.sub-Menu-Active
 {z-index:10; padding:0.45rem 0 0.45rem 0; border:1px solid white; transition-property: max-height,padding,border; transition-duration: 0.8s;}
 /*main , sub 는 rem 간격은 rem으로 통일되어 있다.*/
 
