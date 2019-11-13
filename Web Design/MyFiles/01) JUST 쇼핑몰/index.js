@@ -92,6 +92,11 @@
             maxHeightRest();
         });
     }
-
 })();
 /* </nav>*/
+
+/*figure 이미지 슬라이더*/
+(function (){
+    
+})();
+/*/figure 이미지 슬라이더*/
