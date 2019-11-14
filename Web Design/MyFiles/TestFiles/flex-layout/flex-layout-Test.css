@@ -1,0 +1,38 @@
+@charset "UTF-8";
+
+*{border:1px solid black; box-sizing:border-box;}
+body , figure , ul , li {margin:0; padding:0;}
+ul,li {list-style:none;}
+
+main {width:1200px; height:700px; margin:0 auto;}
+
+header {display:flex; height:100px; justify-content:space-between;}
+header > figure {margin:auto 0; width:200px; height:40px;}
+header > figure > a {display:block; height:100%;}
+header > figure > a > img {display:block; width:100%; height:100%; box-sizing:border-box; border:none;}
+header > nav {width:100%;}
+
+
+nav > ul {display:flex; height:100%; justify-content:space-around;}
+nav > ul > li {display:flex; position:relative; justify-content:center; align-items:center; margin:auto 0; width:100%; font-size:1rem; line-height:1rem;}
+ul > li > ul {display:none; position:absolute; top:1.1rem; left:0; width:100%;}
+ul > li:hover > ul {display:block;}
+ul > li > ul > li {height:25%; text-align:center;}
+
+
+main > figure {height:300px;}
+main > section {display:flex; height:200px;}
+
+
+section > article {flex:1 1 42.5%;}
+section > article:nth-child(2) {flex:1 1 35%;}
+
+
+
+footer {display:flex; height:100px; justify-content:space-around;}
+footer > figure {flex:1 1 20%;}
+footer > article:nth-of-type(1) {flex:1 1 60%;}
+footer > article:nth-of-type(2) {flex:1 1 20%;}
+
+
+
