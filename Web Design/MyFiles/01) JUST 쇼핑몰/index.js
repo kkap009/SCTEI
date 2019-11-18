@@ -96,8 +96,16 @@
 /* </nav>*/
 
 /*figure 이미지 슬라이더*/
-(function (){
-   
+(function () {
+    let i = 0;
+
+    const slider = function () {
+        const sliderImage = document.querySelectorAll("ul[data-slider-image] > li");
+        
+        
+    }
+
+    slider();
 })();
 /*/figure 이미지 슬라이더*/
 
