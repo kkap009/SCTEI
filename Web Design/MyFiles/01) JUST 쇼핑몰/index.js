@@ -97,15 +97,36 @@
 
 /*figure 이미지 슬라이더*/
 (function () {
+    const frame = 50;
+    const time = 20;
+    let test = null;
     let i = 0;
+    let frameCount = 0;
+    let setInter = null;
+    let setTime = null;
+    let leftValue = 100 / frame;
 
     const slider = function () {
         const sliderImage = document.querySelectorAll("ul[data-slider-image] > li");
-        
-        
-    }
+        const parentWidth = sliderImage[0].offsetParent.offsetWidth;
+        let percentage = null;
 
-    slider();
+        if (frameCount === frame) {
+            frameCount = 0;
+            clearTimeout(setTime);
+        } else {
+            for (i = 0; i < sliderImage.length; ++i) {
+                percentage = Math.round(100 * sliderImage[i].offsetLeft / parentWidth);
+                sliderImage[i].style.left = `${percentage - leftValue}%`;
+                test = sliderImage[i].style.left;
+            }
+            ++frameCount;
+            setTime = setTimeout(slider,time);
+            console.log(test);
+        }
+    }
+    
+    setInter = setInterval(slider,5000);
 })();
 /*/figure 이미지 슬라이더*/
 
