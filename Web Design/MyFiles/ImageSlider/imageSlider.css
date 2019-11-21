@@ -1,0 +1,8 @@
+@charset="utf-8";
+
+* {box-sizing:border-box;}
+ul,li {list-style:none; margin:0; padding:0;}
+
+ul[data$="container"] {position:relative; display:flex; width:1200px; height:300px;}
+ul[data$="container"] li {position:absolute; width:100%; height:100%;}
+ul[data$="container"] img {vertical-align:bottom; width:100%; height:100%;}
