@@ -1,16 +1,17 @@
 <!DOCTYPE html>
-<html>
+<html lang="ko">
     <head>
-        <meta charset="utf-8">
+        <meta charset="UTF-8">
         <title>Slider-Image</title>
-        <link rel="stylesheet" type="text/css" href="imageSlider.css"/>
-        <script type="text/javascript" src="imageSlider.js"></script>
+        <link id="imageSlider" rel="stylesheet" type="text/css" href="imageSlider.css"/>
+        <script defer type="text/javascript" src="imageSlider.js"></script>
     </head>
     <body>
-        <ul data="imageSlider-container">
-            <li><a href="#a"><img src="images/%EC%B2%AD%EB%B0%94%EC%A7%80.jpg" alt="청바지"></a></li>
-            <li><a href="#a"><img src="images/%EC%85%94%EC%B8%A0.jpg" alt="셔츠"></a></li>
-            <li><a href="#a"><img src="images/%EA%B7%80%EA%B1%B8%EC%9D%B4.jpg" alt="귀걸이"></a></li>
+        <ul data-image-slider>
+            <!--IE 11은 한글 파일명으로 불러들이지 못한다. 영문명 작성-->
+            <li><a href="#a"><img src="images/jeans.jpg" alt="청바지"></a></li>
+            <li><a href="#a"><img src="images/shirt.jpg" alt="셔츠"></a></li>
+            <li><a href="#a"><img src="images/earring.jpg" alt="귀걸이"></a></li>
         </ul>
     </body>
 </html>

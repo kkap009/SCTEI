@@ -1,20 +1,39 @@
-class Slider {
-    consructor(_sliderLength,_el){
-        this._sliderLength = _sliderLength;
-        this._el = _el;
-    }
+function sliderPostion() {
+    const parent = document.querySelector("ul[data-image-slider]");
+    const child = parent.querySelectorAll("li");
+    let i;
     
-    get sliderLength(){
-        this._sliderLength = document.querySelector(this._el);
-        return this._sliderLength;
+    if (child[0].className==="") {
+        for (i = 0; i < parent.children.length; ++i) {
+            /*IE11은 탬플릿 리터럴을 지원하지 않는다.*/
+            child[i].style.left = i * 100 + "%";
+        }
+        return 1;
     }
-    
-    set sliderLength(el){
-        this._el = el; 
+    return 0;
+}
+
+function slider() {
+    const parent = document.querySelector("ul[data-image-slider]");
+    const child = parent.querySelectorAll("li");
+    let i;
+
+    for (i = 0; i < parent.children.length; ++i) {
+        /*IE11은 탬플릿 리터럴을 지원하지 않는다.*/
+        if(child[i].className === ""){
+            child[i].classList.add("slider");
+        }
     }
 }
 
-const slider = new Slider();
+const sliderMain = function () {
+    let resetResult = sliderPostion();
+    if(!resetResult){
+        slider();
+    }
+    
+    return 0;
+}
 
-slider.sliderLength='ul[data$=\"container\"]';
-console.log(slider.sliderLength);
+sliderMain();
+setTimeout(sliderMain, 2000);
