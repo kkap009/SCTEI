@@ -1,0 +1,29 @@
+/*reset*/
+* {box-sizing:border-box;}
+ul {list-style:none; margin:0; padding:0;}
+button {background:none; border:none;}
+
+
+
+/*imageSlider*/
+div[data-slideshow-container] {position:relative; margin:0 auto; max-width:1200px; min-height:300px;}
+ul[data-slides] {overflow:hidden; position:absolute; top:0; left:0; display:flex; flex:none; width:100%; height:100%;}
+ul[data-slides] > li {position:absolute;}
+ul[data-slides] > li:nth-child(1) {left:0%;}
+ul[data-slides] > li:nth-child(2) {left:100%;}
+ul[data-slides] > li:nth-child(3) {left:200%;}
+ul[data-slides] img {display:block;}
+
+/*imageSlider Next and Previous buttons*/
+a[data-button] {position:absolute; display:block; top:50%; transform:translateY(-50%); border:1px solid black; transition-property: background-color; transition-duration: 0.4s; transition-timing-function:ease; width:60px; height:60px; color:transparent;}
+a[data-button]:hover {background-color:rgba(0,0,0,0.8);}
+a[data-button="next"] {left:0; }
+a[data-button="previous"] {right:0;}
+
+
+/*imageSlider The dots/circles*/
+div[data-dots-container] {position:absolute; display:flex; flex:none; bottom:10%; left:50%; transform:translateX(-50%); }
+button[data-dot] {width:16px; height:16px; margin:0 16px; cursor:pointer; background-color:#bbb; border-radius:50%; color:transparent; transition-property: background-color; transition-duration: 0.4s; transition-timing-function: ease;}
+button[data-dot]:hover {background-color:#717171;}
+
+
