@@ -11,7 +11,7 @@ button {background:none; border:none;}
 div[data-slideshow-container] {position:relative; margin:0 auto; max-width:1200px; height:300px;}
 ul[data-slides] {overflow:hidden; position:absolute; top:0; left:0; display:flex; flex:none; width:100%; height:100%;}
 ul[data-slides] > li {position:absolute; width:100%; height:100%;}
-ul[data-slides] > li.slideAnimation {transition-property: left,right; transition-timing-function: ease-in-out; transition-duration: 1s;}
+ul[data-slides] > li.slideAnimation {transition-property: left,right; transition-timing-function: ease-in-out; transition-duration: 1.5s;}
 ul[data-slides] img {display:block; width:100%; height:100%;}
 
 /*imageSlider Next and Previous buttons*/
