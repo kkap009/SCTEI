@@ -1,19 +1,27 @@
-const slideSpace = new Map();
-let i;
+function Counter() {
+    this.count = null;
+}
 
-var _counter = (function () {
-    let counter = -1;
-    
-    return function (status) {
-        if(status.match("increase")){
-            return ++counter;
-        }else if(status.match("decrease")){
-            return --counter;
-        }else{
-            return counter = -1;
-        }
-    }
-}());
+Counter.prototype.reset = function () {
+    this.count = 0;
+}
+
+Counter.prototype.increase = function () {
+    this.count = ++(this.count);
+}
+
+Counter.prototype.decrease = function () {
+    this.count = --(this.count);
+}
+
+Counter.prototype.now = function () {
+    return this.count;
+}
+
+Counter.prototype.nullCheck = function() {
+    if(this.count === null) return 1;
+    else return 0;
+}
 
 function _setSlidesPostion() {
     slideSpace.set("li", document.querySelectorAll("li[data-mySlides]"));
@@ -36,21 +44,22 @@ function _nextSlide() {
 }
 
 function _slides() {
-    const count = _counter("increase");
-    console.log(count);
-
-    if (count >= slideSpace.get("li").length - 1 || count < 0) {
+    if(count.nullCheck()){
+        count.reset();
+    }
+    
+    if(count.now() === slideSpace.get("li").length-1){
         clearInterval(slideSpace.get("setInterval"));
-        console.log(slideSpace.get("li")[count]);
-        for(i=0; i < count; ++i){
-            slideSpace.get("ul").appendChild(slideSpace.get("li")[i]);
-        }
-        console.log(slideSpace.get("ul"));
-    } else {
-        console.log(slideSpace.get("li")[count]);
+        
+    }else{
         _nextSlide();
+        count.increase();
     }
 }
+
+const slideSpace = new Map();
+const count = new Counter();
+let i;
 
 _setSlidesPostion();
 slideSpace.set("setInterval", setInterval(_slides, 2000));
