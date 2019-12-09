@@ -1,0 +1,38 @@
+const ul = document.querySelector("ul[data-slides]");
+const li = document.querySelectorAll("li[data-mySlides]");
+
+const reset = function (){  
+  let count = 0;
+  li.forEach(function(){
+    li[count].style.left = (count * 100)+"%";
+    ++count;
+  });
+}
+
+const addClass = function(){
+  let count = 0;
+  li.forEach(function(){
+    li[count].classList.add("slideAnimation");
+    ++count;
+  });
+}
+
+const next = function (){
+  let count = 0;
+  let size = null;
+  const li = document.querySelectorAll("li[data-mySlides]");
+  li.forEach(function(){
+    size = li[count].style.left.replace(/%$/g,'');
+    li[count].style.left = (Number(size) - 100)+"%";
+    ++count;
+  });
+  
+  const fristChild = ul.removeChild(li[0]);
+  console.log(fristChild);
+  fristChild.style.left = 100+"%";
+  ul.appendChild(fristChild);
+}
+
+reset();
+addClass();
+setInterval(next,2000);
