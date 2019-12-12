@@ -24,6 +24,6 @@ a[data-button="previous"] {right:0;}
 /*imageSlider The dots/circles*/
 div[data-dots-container] {position:absolute; display:flex; flex:none; bottom:10%; left:50%; transform:translateX(-50%); }
 button[data-dot] {width:16px; height:16px; margin:0 16px; cursor:pointer; background-color:#bbb; border-radius:50%; color:transparent; transition-property: background-color; transition-duration: 0.4s; transition-timing-function: ease;}
-button[data-dot]:hover, button[data-dot].ative {background-color:#717171;}
+button[data-dot]:hover, button[data-dot].active {background-color:#717171;}
 
 
