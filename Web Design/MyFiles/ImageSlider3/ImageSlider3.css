@@ -1,0 +1,28 @@
+@charset "UTF-8";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul,li {
+  list-style: none;
+}
+
+.wrap {
+  width: 80%;
+  margin: 30px auto 0 auto;
+  border: 2px solid black;
+}
+
+.wrap .imageContainer {
+  display: flex;
+  width: 400%;
+  height: 200px;
+}
+
+.wrap .imageContainer img {
+  height: 100%;
+  width: 100%;
+}
