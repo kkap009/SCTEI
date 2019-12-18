@@ -11,7 +11,7 @@ li {
     list-style: none;
 }
 
-.wrap {
+.wrap2 {
     max-width: 1200px;
     height: 400px;
     margin: auto;
@@ -19,20 +19,21 @@ li {
     /*overflow:hidden;*/
 }
 
-.wrap .imageContainer {
+.wrap2 .imageContainer2 {
+    position:relative;
     display: flex;
     width: 400%;
     height:100%;
 }
 
-.wrap .imageContainer img {
+.wrap2 .imageContainer2 img {
     height: 100%;
     width: 100%;
 }
 
-.wrap .imageContainer.transitionImg {
-    transition-property: transform;
-    transition-duration: 0.4s;    transition-duration: 0.4s;
-
+.wrap2 .imageContainer2.transitionImg2 {
+    transition-property: left,right;
+    transition-duration: 0.4s;
     transition-timing-function: ease-in-out;
+    left:0;
 }

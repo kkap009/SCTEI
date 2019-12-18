@@ -1,3 +1,5 @@
+/*eslint-env es6*/
+
 const carouselSlide = document.querySelector(".imageContainer");
 const carouselImages = carouselSlide.getElementsByTagName("li");
 
@@ -22,9 +24,7 @@ prevBtn.addEventListener('click',function(){
 });
 
 carouselSlide.addEventListener("transitionend", function(){
-   if(counter === -1){
-       carouselSlide.classList.remove("transitionImg");
-       counter = carouselImages.length - 1;
-       carouselSlide.style.transform = "translateX("+(-size * counter) + "px)";
-   }
+   
 });
+
+
