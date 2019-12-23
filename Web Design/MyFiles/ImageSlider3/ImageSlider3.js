@@ -1,4 +1,5 @@
-/*eslint-env es6*/
+/*eslint-env es6*/ /*error  Parsing error: The keyword 'const' is reserved 해결*/
+/*eslint-env browser*/ /*ERROR: 'document' is not defined [no-undef] 해결*/
 
 const carouselSlide = document.querySelector(".imageContainer");
 const carouselImages = carouselSlide.getElementsByTagName("li");
@@ -23,8 +24,6 @@ prevBtn.addEventListener('click',function(){
     carouselSlide.style.transform = "translateX("+(-size * counter) + "px)";
 });
 
-carouselSlide.addEventListener("transitionend", function(){
-   
-});
+
 
 
