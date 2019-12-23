@@ -8,5 +8,5 @@
   - ```
   /*eslint-env es6*/ /*error  Parsing error: The keyword 'const' is reserved 해결*/
   /*eslint-env browser*/ /*ERROR: 'document' is not defined [no-undef] 해결*/
-  ```
+    ```
 
