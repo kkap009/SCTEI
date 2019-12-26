@@ -13,9 +13,8 @@ li {
 
 .wrap2 {
     max-width: 1200px;
+    overflow:hidden;
     height: 400px;
-    margin: auto;
-    border: 2px solid black;
     /*overflow:hidden;*/
 }
 
@@ -36,4 +35,21 @@ li {
     transition-duration: 0.4s;
     transition-timing-function: ease-in-out;
     left:0;
+}
+
+.container2 {
+    max-width: 1300px;
+    display:flex;
+    margin: 20px auto;
+    background:rgba(0,0,0,0);
+}
+
+button[type="button"] {
+    margin:auto 0;
+    min-width:3rem;
+    height:3rem;
+    flex:1;
+    background:rgba(0,0,0,0);
+    border:none;
+    color:black;
 }
